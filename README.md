@@ -28,7 +28,7 @@ lognet/
 |
 |-- tests/
 |   |-- TestLognet/
-|   |   |-- UnitTest1.cs
+|   |   |-- UnitLognet.cs
 |   |
 |   |-- lognet.Tests.csproj
 |
