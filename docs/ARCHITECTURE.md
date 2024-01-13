@@ -15,6 +15,7 @@ lognet/
 |   |
 |   |-- Handlers/
 |   |   |-- ConsoleHandler.cs
+|   |   |-- FileHandler.cs
 |   |   |-- IHandler.cs
 |   |
 |   |-- lognet.csproj
