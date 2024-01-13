@@ -7,7 +7,7 @@ namespace lognet.Formatters
     {
         public static string FormatMessage(LogEntity logEntity, LoggerConfig config)
         {
-            return $"{logEntity.Level} - {logEntity.Message}";
+            return $"{logEntity.Timestamp:yyyy-MM-dd HH:mm:ss} - {logEntity.Level} - {logEntity.Message}";
         }
     }
 }
