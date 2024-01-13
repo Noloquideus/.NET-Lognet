@@ -43,6 +43,22 @@ namespace TestLognet
             
             mockConsoleHandler.Verify(h => h.Emit(It.IsAny<LogEntity>(), It.IsAny<string>()), Times.Once);
         }
+
+        [Fact]
+        public void Log_WithFileHandler_CallsFileWriteOnce()
+        {
+            var tempFilePath = Path.GetTempFileName();
+            var fileHandler = new FileHandler(tempFilePath);
+            var config = new LoggerConfig("Default Log Format", LogLevel.Info, fileHandler: fileHandler);
+            var logger = new Logger(config);
+            
+            logger.Log(LogLevel.Info, "Test message");
+            
+            Assert.Contains("Test message", File.ReadAllText(tempFilePath));
+            
+            File.Delete(tempFilePath);
+        }
+
         [Fact]
         public void Log_WithLogLevelBelowMinimum_DoesNotCallEmit()
         {
