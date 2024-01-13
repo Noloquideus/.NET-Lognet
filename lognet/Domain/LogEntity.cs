@@ -1,16 +1,13 @@
-namespace lognet.Domain
-{
-    public class LogEntity
-    {
-        public LogEntity(LogLevel level, string message)
-        {
-            Level = level;
-            Message = message;
-            Timestamp = DateTime.Now;
-        }
+namespace lognet.Domain;
 
-        public LogLevel Level { get; private set; }
-        public string Message { get; private set; }
-        public DateTime Timestamp { get; private set; }
+public class LogEntity
+{
+    public LogEntity(LogLevel level, string message)
+    {
+        Level = level;
+        Message = message;
     }
+
+    public LogLevel Level { get; set; }
+    public string Message { get; set; }
 }
