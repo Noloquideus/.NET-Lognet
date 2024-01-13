@@ -82,5 +82,17 @@ namespace TestLognet
             
             mockConsoleHandler.Verify(h => h.Emit(It.IsAny<LogEntity>(), It.IsAny<string>()), Times.Once);
         }
+        
+        [Fact]
+        public void Log_WithTimestamp_CreatesLogEntityWithTimestamp()
+        {
+            var mockHandler = new Mock<IHandler>();
+            var config = new LoggerConfig("Default Log Format", LogLevel.Info, mockHandler.Object);
+            var logger = new Logger(config);
+            
+            logger.Log(LogLevel.Info, "Test message");
+            
+            mockHandler.Verify(h => h.Emit(It.Is<LogEntity>(logEntity => logEntity.Timestamp != default), It.IsAny<string>()), Times.Once);
+        }
     }
 }
