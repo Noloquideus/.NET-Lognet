@@ -21,8 +21,10 @@ namespace lognet.Application
             if (logEntity.Level >= _config.MinimumLevel)
             {
                 IHandler? consoleHandler = _config.ConsoleHandler;
+                IHandler? fileHandler = _config.FileHandler;
 
                 consoleHandler?.Emit(logEntity, LogFormatter.FormatMessage(logEntity, _config));
+                fileHandler?.Emit(logEntity, LogFormatter.FormatMessage(logEntity, _config));
             }
         }
     }
