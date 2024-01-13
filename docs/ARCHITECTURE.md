@@ -1,0 +1,36 @@
+lognet/
+|-- lognet/
+|   |-- Application/
+|   |   |-- Logger.cs
+|   |
+|   |-- Configuration/
+|   |   |-- LoggerConfig.cs
+|   |
+|   |-- Domain/
+|   |   |-- LogEntity.cs
+|   |   |-- LogLevel.cs
+|   |
+|   |-- Formatters/
+|   |   |-- LogFormatter.cs
+|   |
+|   |-- Handlers/
+|   |   |-- ConsoleHandler.cs
+|   |   |-- IHandler.cs
+|   |
+|   |-- lognet.csproj
+|
+|-- tests/
+|   |-- TestLognet/
+|   |   |-- UnitTest1.cs
+|   |
+|   |-- lognet.Tests.csproj
+|
+|-- docs/
+|   |-- USAGE.md
+|   |-- FEEDBACK.md
+|   |-- ARCHITECTURE.md
+|   |-- CHANGELOG.md
+|
+|-- .gitignore
+|-- README.md
+|-- lognet.sln
