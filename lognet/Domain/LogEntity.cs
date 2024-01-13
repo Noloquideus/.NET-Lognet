@@ -9,8 +9,8 @@ namespace lognet.Domain
             Timestamp = DateTime.Now;
         }
 
-        public LogLevel Level { get; set; }
-        public string Message { get; set; }
-        public DateTime Timestamp { get; set; }
+        public LogLevel Level { get; private set; }
+        public string Message { get; private set; }
+        public DateTime Timestamp { get; private set; }
     }
 }
